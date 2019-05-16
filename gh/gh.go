@@ -79,7 +79,7 @@ func (c Client) Unlock() error {
 	if err != nil {
 		return err
 	}
-	if resp.StatusCode != http.StatusAccepted {
+	if resp.StatusCode != http.StatusNoContent {
 		bytes, _ := ioutil.ReadAll(resp.Body)
 		return fmt.Errorf(string(bytes))
 	}
